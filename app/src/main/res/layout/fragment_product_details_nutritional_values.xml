@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailsNutritionalValuesFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.InfoActivity">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintGuide_end="100dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/col_end"
+            app:layout_constraintGuide_end="200dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="80dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/row_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="110dp" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:text="@string/i00g"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform"
+            app:border="left|bottom"
+            app:layout_constraintBottom_toTopOf="@+id/row"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:text="@string/part"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform"
+            app:border="left|bottom"
+            app:layout_constraintBottom_toTopOf="@+id/row"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/energy"
+
+            app:border="right|bottom|top"
+            app:layout_constraintBottom_toTopOf="@+id/row_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/row"
+
+            />
+
+
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/energy100"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintBottom_toTopOf="@+id/row_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toTopOf="@+id/row" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/energypart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintBottom_toTopOf="@+id/row_bottom"
+            app:layout_constraintEnd_toEndOf="@+id/tableCellView2"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toTopOf="@+id/row" />
+
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView6"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/fat"
+
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/fat100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toTopOf="@+id/row_bottom" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/fatpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toTopOf="@+id/row_bottom" />
+
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView19"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/acid"
+
+            app:border="right|bottom"
+
+
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView6" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/acid100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toBottomOf="@+id/fat100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/acidparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/fatpart" />
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView11"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/glucid"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView19" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/glucid100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toBottomOf="@+id/acid100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/glucidparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/acidparpart" />
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView20"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/sugar"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView11" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/sugar100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toEndOf="@+id/tableCellView20"
+            app:layout_constraintTop_toBottomOf="@+id/glucid100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/sugarparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/glucidparpart" />
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView22"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/fiber"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView20" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/fiber100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toEndOf="@+id/tableCellView22"
+            app:layout_constraintTop_toBottomOf="@+id/sugar100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/fiberparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/sugarparpart" />
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView24"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/protein"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView22" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/protein100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toEndOf="@+id/tableCellView22"
+            app:layout_constraintTop_toBottomOf="@+id/fiber100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/proteinparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/fiberparpart" />
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView28"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/salt"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView24" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/salt100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+
+
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toBottomOf="@+id/protein100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/saltparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/proteinparpart" />
+
+        <!-- -->
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/tableCellView30"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/sodium"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableCellView28" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/sodium100g"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toStartOf="@+id/col_end"
+            app:layout_constraintStart_toStartOf="@+id/col_1"
+            app:layout_constraintTop_toBottomOf="@+id/salt100g" />
+
+        <fr.leprohon.labs.esgi_kotlin.utils.TableCellView
+            android:id="@+id/sodiumparpart"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="?"
+            android:textAlignment="center"
+            app:border="right|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/col_end"
+            app:layout_constraintTop_toBottomOf="@+id/saltparpart" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

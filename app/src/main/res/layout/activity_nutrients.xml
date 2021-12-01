@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.NutrientActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lguideline"
+        app:layout_constraintGuide_begin="25dp"
+        android:orientation="vertical"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lhguideline"
+        app:layout_constraintGuide_end="25dp"
+        android:orientation="vertical"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rhguideline"
+        app:layout_constraintGuide_begin="25dp"
+        android:orientation="horizontal"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_nutri"
+        app:layout_constraintGuide_begin="70dp"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/reperes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="81dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_reperes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="120dp" />
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="Repères nutritionnels pour 100g"
+        android:textSize="15sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="@+id/lguideline"
+        app:layout_constraintTop_toTopOf="@+id/rhguideline" />
+
+    <TextView
+        android:id="@+id/info_fat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toTopOf="@+id/reperes"
+        android:text="0.8g de Matières grasses/lipides" />
+
+    <TextView
+        android:id="@+id/quantity_fat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="en faible quantité"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toBottomOf="@+id/info_fat" />
+
+    <View
+        android:background="@drawable/circle_fat"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/circle"
+        android:src="@drawable/circle_fat"
+        app:layout_constraintBottom_toTopOf="@+id/end_reperes"
+        app:layout_constraintEnd_toStartOf="@+id/info_nutri"
+        app:layout_constraintStart_toStartOf="@+id/lguideline"
+        app:layout_constraintTop_toTopOf="@+id/reperes" />
+
+    <TextView
+        android:id="@+id/info_satured_acid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.1g d'acides gras saturés"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toTopOf="@+id/end_reperes" />
+
+    <TextView
+        android:id="@+id/quantity_satured_acid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="en quantité modérée"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toBottomOf="@+id/info_satured_acid" />
+
+    <View
+        android:id="@+id/circle_satured_acid"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/circle_fat"
+        android:src="@drawable/circle_fat"
+
+        app:layout_constraintBottom_toBottomOf="@+id/quantity_satured_acid"
+        app:layout_constraintEnd_toStartOf="@+id/info_nutri"
+        app:layout_constraintStart_toStartOf="@+id/lguideline"
+        app:layout_constraintTop_toTopOf="@+id/info_satured_acid" />
+
+
+    <TextView
+        android:id="@+id/info_sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.2g de sucres"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toBottomOf="@+id/quantity_satured_acid" />
+
+    <TextView
+        android:id="@+id/quantity_sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="en quantité modérée"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toBottomOf="@+id/info_sugar" />
+
+    <View
+        android:id="@+id/circle_sugar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/circle_fat"
+        android:src="@drawable/circle_fat"
+
+        app:layout_constraintBottom_toBottomOf="@+id/quantity_sugar"
+        app:layout_constraintEnd_toStartOf="@+id/info_nutri"
+        app:layout_constraintStart_toStartOf="@+id/lguideline"
+        app:layout_constraintTop_toTopOf="@+id/info_sugar" />
+
+
+    <TextView
+        android:id="@+id/info_salt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.75g de sel"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toBottomOf="@+id/quantity_sugar" />
+
+    <TextView
+        android:id="@+id/quantity_salt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="en forte quantité"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/info_nutri"
+        app:layout_constraintTop_toBottomOf="@+id/info_salt" />
+
+    <View
+        android:id="@+id/circle_salt"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/circle_fat"
+        android:src="@drawable/circle_fat"
+
+        app:layout_constraintBottom_toBottomOf="@+id/quantity_salt"
+        app:layout_constraintEnd_toStartOf="@+id/info_nutri"
+        app:layout_constraintStart_toStartOf="@+id/lguideline"
+        app:layout_constraintTop_toTopOf="@+id/info_salt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

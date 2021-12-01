@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailsSummaryFragment">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/product_details_nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/product_details_bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lguideline"
+        app:layout_constraintGuide_begin="25dp"
+        android:orientation="vertical"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rguideline"
+        app:layout_constraintGuide_end="25dp"
+        android:orientation="vertical"/>
+    <ImageView
+        android:id="@+id/posterView"
+        tools:srcCompat="@drawable/placeholder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:background="@color/colorPrimary"
+        android:contentDescription="" />
+
+        <ImageView
+            android:id="@+id/score"
+            android:layout_width="78dp"
+            android:layout_height="42dp"
+            android:contentDescription=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="@id/rguideline"
+            app:layout_constraintTop_toBottomOf="@id/posterView"
+            tools:srcCompat="@drawable/nutri_score_a" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        app:layout_constraintTop_toBottomOf="@id/posterView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        tools:text="Product name"/>
+    <TextView
+        android:id="@+id/brand"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:text="@string/brand"/>
+    <TextView
+        android:id="@+id/barcode"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/barcode"
+        />
+    <TextView
+        android:id="@+id/quantity"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        app:layout_constraintTop_toBottomOf="@id/barcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/quantity"
+        />
+    <TextView
+        android:id="@+id/sold"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        app:layout_constraintTop_toBottomOf="@id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/sold"
+        />
+    <TextView
+        android:id="@+id/ingredients"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        app:layout_constraintTop_toBottomOf="@id/sold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/ingredients"
+        />
+    <TextView
+        android:id="@+id/allergenes"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        app:layout_constraintTop_toBottomOf="@id/ingredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/allergenes"
+
+        />
+    <TextView
+        android:id="@+id/additives"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/lguideline"
+        app:layout_constraintTop_toBottomOf="@id/allergenes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/additives"
+
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

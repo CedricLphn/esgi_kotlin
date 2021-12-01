@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_details"
+    app:startDestination="@id/productDetailsSummaryFragment">
+
+    <fragment
+        android:id="@+id/productDetailsNutritionFragment"
+        android:name="fr.leprohon.labs.esgi_kotlin.ProductDetailsNutritionFragment"
+        android:label="fragment_product_details_nutrition" />
+    <fragment
+        android:id="@+id/productDetailsNutritionalValuesFragment"
+        android:name="fr.leprohon.labs.esgi_kotlin.ProductDetailsNutritionalValuesFragment"
+        android:label="fragment_product_details_nutritional_values" />
+    <fragment
+        android:id="@+id/productDetailsSummaryFragment"
+        android:name="fr.leprohon.labs.esgi_kotlin.ProductDetailsSummaryFragment"
+        android:label="fragment_product_details_summary" />
+</navigation>
