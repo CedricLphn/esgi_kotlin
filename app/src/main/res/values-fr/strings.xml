@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mon comparateur</string>
+    <string name="brand">Marque</string>
+    <string name="quantity">Quantité</string>
+    <string name="barcode">Code barres</string>
+    <string name="sold">Vendu en</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="allergenes">Substances allergènes</string>
+    <string name="additives">Additifs</string>
+    <string name="energy">Energie</string>
+    <string name="fat">Matière grasses</string>
+    <string name="acid">Dont acide gras saturés</string>
+    <string name="glucid">Glucides</string>
+    <string name="sugar">Sucres</string>
+    <string name="fiber">Fibres alimentaires</string>
+    <string name="salt">Sel</string>
+    <string name="sodium">Sodium</string>
+    <string name="i00g">Par 100g</string>
+    <string name="part">Par part</string>
+    <string name="protein">Protéines</string>
+    <string name="level_low">En faible quantité</string>
+    <string name="level_moderate">En quantité modérée</string>
+    <string name="level_high">En quantité elevée</string>
+</resources>
