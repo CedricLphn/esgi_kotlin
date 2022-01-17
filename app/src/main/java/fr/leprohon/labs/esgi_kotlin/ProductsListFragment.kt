@@ -1,10 +1,15 @@
 package fr.leprohon.labs.esgi_kotlin
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -26,8 +31,6 @@ private const val ARG_PARAM2 = "param2"
  */
 class ProductsListFragment : Fragment() {
     // TODO: Rename and change types of parameters
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -56,8 +59,32 @@ class ProductsListFragment : Fragment() {
                 )
             )
         }
+
+        view.findViewById<Button>(R.id.products_start_scan).setOnClickListener {
+            Log.i("", "onViewCreated: click")
+            val intent = Intent()
+            intent.action = "com.google.zxing.client.android.SCAN"
+            intent.putExtra("SCAN_FORMATS", "EAN_13")
+            getBarcode.launch(intent);
+        }
+
     }
 
+    private val getBarcode = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        when(it.resultCode) {
+            Activity.RESULT_OK -> {
+                val format = it.data?.getStringExtra("SCAN_RESULT_FORMAT")
+                val res = it.data?.getStringExtra("SCAN_RESULT")
+
+                Log.i("", res.toString());
+            }
+            Activity.RESULT_CANCELED -> {
+                Log.i("BarcodeScanner", "Activity: Barcode scan cancelled")
+            }
+        }
+    }
 
 
     companion object {
