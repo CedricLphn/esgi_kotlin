@@ -1,6 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id "org.sonarqube" version "3.3"
+}
+sonarqube {
+    properties {
+        property "sonar.projectKey", "CedricLphn_esgi_kotlin"
+    }
 }
 
 android {
