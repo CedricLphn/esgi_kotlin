@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id "org.sonarqube" version "3.3"
 }
+
 sonarqube {
     properties {
         property "sonar.projectKey", "CedricLphn_esgi_kotlin"
@@ -14,8 +15,8 @@ android {
 
     defaultConfig {
         applicationId "fr.leprohon.labs.esgi_kotlin"
-        minSdk 31
-        targetSdk 31
+        minSdk 23
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
