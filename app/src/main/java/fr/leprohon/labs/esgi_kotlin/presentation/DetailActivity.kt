@@ -2,7 +2,6 @@ package fr.leprohon.labs.esgi_kotlin.presentation
 
 import android.os.Bundle
 import android.text.SpannableStringBuilder
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +11,6 @@ import com.squareup.picasso.Picasso
 import fr.leprohon.labs.esgi_kotlin.R
 import fr.leprohon.labs.esgi_kotlin.databases.product_fake
 import fr.leprohon.labs.esgi_kotlin.utils.formatItemsFromList
-import fr.leprohon.labs.esgi_kotlin.utils.setSpannableTextBold
 
 class DetailActivity : AppCompatActivity() {
 
@@ -23,12 +21,12 @@ class DetailActivity : AppCompatActivity() {
 
 
         val product = product_fake
-        val posterView = findViewById<ImageView>(R.id.posterView);
+        val posterView = findViewById<ImageView>(R.id.posterView)
         Picasso.get()
             .load(product.imageUrl)
             .placeholder(R.drawable.placeholder)
             .error(R.drawable.placeholder)
-            .into(posterView);
+            .into(posterView)
 
         findViewById<TextView>(R.id.title).text = product.name
         findViewById<TextView>(R.id.brand).text = product.brand
@@ -45,7 +43,7 @@ class DetailActivity : AppCompatActivity() {
     private fun setTextStyle(label : String, content : String) : SpannableStringBuilder {
         return SpannableStringBuilder()
             .bold { append("$label: ") }
-            .append(content);
+            .append(content)
     }
 
 }

@@ -3,21 +3,15 @@ package fr.leprohon.labs.esgi_kotlin
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.text.SpannableStringBuilder
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.text.bold
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProductDetailsNutritionFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProductDetailsNutritionFragment : Fragment() {
     private val model: SharedProductView by activityViewModels()
 
@@ -41,21 +35,18 @@ class ProductDetailsNutritionFragment : Fragment() {
 
         val product = model.selected.value!!
 
-        val view = inflater.inflate(R.layout.fragment_product_details_nutrition, container, false);
+        val view = inflater.inflate(R.layout.fragment_product_details_nutrition, container, false)
 
         with(view) {
 
-            var colorFat : Int = 0
-            var labelqtyFat : Int = 0
-
-            var colorAcid : Int = 0
-            var labelqtyacid : Int = 0
-
-            var colorSugar : Int = 0
-            var labelqtySugar : Int = 0
-
-            var colorSalt : Int = 0
-            var labelqtySalt : Int = 0
+            val colorFat: Int
+            val labelqtyFat: Int
+            val colorAcid : Int
+            val labelqtyacid : Int
+            val colorSugar : Int
+            val labelqtySugar : Int
+            val colorSalt : Int
+            val labelqtySalt : Int
 
             when {
                 product.nutritionFactsItem.matiere_g.quantityfor100g < 3 -> {

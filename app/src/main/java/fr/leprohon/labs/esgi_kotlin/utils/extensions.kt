@@ -1,15 +1,9 @@
 package fr.leprohon.labs.esgi_kotlin.utils
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Typeface
-import android.os.Handler
-import android.os.Looper
 import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
-import android.widget.ImageView
 import android.widget.TextView
-import java.util.concurrent.Executors
 
 fun TextView.setSpannableTextBold(text: String, separator: String = ":") {
     val builder = SpannableStringBuilder(text)

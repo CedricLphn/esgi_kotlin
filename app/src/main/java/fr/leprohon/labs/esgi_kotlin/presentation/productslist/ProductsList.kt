@@ -1,13 +1,11 @@
 package fr.leprohon.labs.esgi_kotlin.presentation.productslist
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.leprohon.labs.esgi_kotlin.R
 import fr.leprohon.labs.esgi_kotlin.databases.Product
 import fr.leprohon.labs.esgi_kotlin.databases.product_fake
 import fr.leprohon.labs.esgi_kotlin.databinding.ActivityProductsListBinding
-import fr.leprohon.labs.esgi_kotlin.databinding.ProductItemBinding
 
 class ProductsList : AppCompatActivity() {
 

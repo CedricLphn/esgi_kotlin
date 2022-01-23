@@ -1,24 +1,13 @@
 package fr.leprohon.labs.esgi_kotlin
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import fr.leprohon.labs.esgi_kotlin.databases.Product
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProductDetailsNutritionalValuesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProductDetailsNutritionalValuesFragment : Fragment() {
 
     private val model: SharedProductView by activityViewModels()
@@ -33,8 +22,8 @@ class ProductDetailsNutritionalValuesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_product_details_nutritional_values, container, false);
-        return view;
+        val view = inflater.inflate(R.layout.fragment_product_details_nutritional_values, container, false)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,25 +50,5 @@ class ProductDetailsNutritionalValuesFragment : Fragment() {
             findViewById<TextView>(R.id.saltparpart).text = value?.nutritionFactsItem?.sel?.quantityperportion.toString()
             findViewById<TextView>(R.id.sodiumparpart).text = value?.nutritionFactsItem?.sodium?.quantityperportion.toString()
         }
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProductDetailsNuatritionalValuesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProductDetailsNutritionalValuesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

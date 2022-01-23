@@ -1,12 +1,8 @@
 package fr.leprohon.labs.esgi_kotlin.presentation
 
 import android.content.res.ColorStateList
-import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
