@@ -4,6 +4,15 @@ buildscript {
         google()
         mavenCentral()
     }
+    plugins {
+        id "org.sonarqube" version "3.3"
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.projectKey", "CedricLphn_esgi_kotlin"
+        }
+    }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.3"
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0'
