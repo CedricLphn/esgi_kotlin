@@ -39,7 +39,6 @@ class ProductDetailsNutritionalValuesFragment : Fragment() {
             findViewById<TextView>(R.id.protein100g).text = value?.nutritionFactsItem?.protein?.quantityfor100g.toString()
             findViewById<TextView>(R.id.salt100g).text = value?.nutritionFactsItem?.sel?.quantityfor100g.toString()
             findViewById<TextView>(R.id.sodium100g).text = value?.nutritionFactsItem?.sodium?.quantityfor100g.toString()
-
             findViewById<TextView>(R.id.energypart).text = value?.nutritionFactsItem?.energy?.quantityperportion.toString()
             findViewById<TextView>(R.id.fatpart).text = value?.nutritionFactsItem?.matiere_g?.quantityperportion.toString()
             findViewById<TextView>(R.id.acidparpart).text = value?.nutritionFactsItem?.acide_gras_saturee?.quantityperportion.toString()

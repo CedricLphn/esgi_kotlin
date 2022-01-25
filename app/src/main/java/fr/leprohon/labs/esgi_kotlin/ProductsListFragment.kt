@@ -44,7 +44,6 @@ class ProductsListFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.products_start_scan).setOnClickListener {
-            Log.i("", "onViewCreated: click")
             val intent = Intent()
             intent.action = "com.google.zxing.client.android.SCAN"
             intent.putExtra("SCAN_FORMATS", "EAN_13")

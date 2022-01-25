@@ -38,73 +38,66 @@ class ProductDetailsNutritionFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_product_details_nutrition, container, false)
 
         with(view) {
-
-            val colorFat: Int
-            val labelqtyFat: Int
-            val colorAcid : Int
-            val labelqtyacid : Int
-            val colorSugar : Int
-            val labelqtySugar : Int
-            val colorSalt : Int
-            val labelqtySalt : Int
+            val colors : MutableMap<String, Int> = mutableMapOf()
+            val labels : MutableMap<String, Int> = mutableMapOf()
 
             when {
                 product.nutritionFactsItem.matiere_g.quantityfor100g < 3 -> {
-                    colorFat = R.color.nutrient_level_low
-                    labelqtyFat = R.string.level_low
+                    colors["fat"] = R.color.nutrient_level_low
+                    labels["fat"] = R.string.level_low
                 }
                 product.nutritionFactsItem.matiere_g.quantityfor100g in 3.0..20.0 -> {
-                    colorFat = R.color.nutrient_level_moderate
-                    labelqtyFat = R.string.level_moderate
+                    colors["fat"] = R.color.nutrient_level_moderate
+                    labels["fat"] = R.string.level_moderate
                 }
                 else -> {
-                    colorFat = R.color.nutrient_level_high
-                    labelqtyFat = R.string.level_high
+                    colors["fat"] = R.color.nutrient_level_high
+                    labels["fat"] = R.string.level_high
                 }
             }
 
             when {
                 product.nutritionFactsItem.acide_gras_saturee.quantityfor100g < 1.5 -> {
-                    colorAcid = R.color.nutrient_level_low
-                    labelqtyacid = R.string.level_low
+                    colors["acid"] = R.color.nutrient_level_low
+                    labels["acid"] = R.string.level_low
                 }
                 product.nutritionFactsItem.acide_gras_saturee.quantityfor100g in 1.5..5.0 -> {
-                    colorAcid = R.color.nutrient_level_moderate
-                    labelqtyacid = R.string.level_moderate
+                    colors["acid"] = R.color.nutrient_level_moderate
+                    labels["acid"] = R.string.level_moderate
                 }
                 else -> {
-                    colorAcid = R.color.nutrient_level_high
-                    labelqtyacid = R.string.level_high
+                    colors["acid"] = R.color.nutrient_level_high
+                    labels["acid"] = R.string.level_high
                 }
             }
 
             when {
                 product.nutritionFactsItem.sugar.quantityfor100g < 5.0 -> {
-                    colorSugar = R.color.nutrient_level_low
-                    labelqtySugar = R.string.level_low
+                    colors["sugar"] = R.color.nutrient_level_low
+                    labels["sugar"] = R.string.level_low
                 }
                 product.nutritionFactsItem.sugar.quantityfor100g in 5.0..12.5 -> {
-                    colorSugar = R.color.nutrient_level_moderate
-                    labelqtySugar = R.string.level_moderate
+                    colors["sugar"] = R.color.nutrient_level_moderate
+                    labels["sugar"] = R.string.level_moderate
                 }
                 else -> {
-                    colorSugar = R.color.nutrient_level_high
-                    labelqtySugar = R.string.level_high
+                    colors["sugar"] = R.color.nutrient_level_high
+                    labels["sugar"] = R.string.level_high
                 }
             }
 
             when {
                 product.nutritionFactsItem.sel.quantityfor100g < 0.5 -> {
-                    colorSalt = R.color.nutrient_level_low
-                    labelqtySalt = R.string.level_low
+                    colors["salt"] = R.color.nutrient_level_low
+                    labels["salt"] = R.string.level_low
                 }
                 product.nutritionFactsItem.sel.quantityfor100g in 0.5..1.5 -> {
-                    colorSalt = R.color.nutrient_level_moderate
-                    labelqtySalt = R.string.level_moderate
+                    colors["salt"] = R.color.nutrient_level_moderate
+                    labels["salt"] = R.string.level_moderate
                 }
                 else -> {
-                    colorSalt = R.color.nutrient_level_high
-                    labelqtySalt = R.string.level_high
+                    colors["salt"] = R.color.nutrient_level_high
+                    labels["salt"] = R.string.level_high
                 }
             }
 
@@ -128,28 +121,28 @@ class ProductDetailsNutritionFragment : Fragment() {
 
 
 
-            findViewById<TextView>(R.id.quantity_fat).text = getString(labelqtyFat)
-            findViewById<TextView>(R.id.quantity_satured_acid).text = getString(labelqtyacid)
-            findViewById<TextView>(R.id.quantity_sugar).text = getString(labelqtySugar)
-            findViewById<TextView>(R.id.quantity_salt).text = getString(labelqtySalt)
+            findViewById<TextView>(R.id.quantity_fat).text = getString(labels["fat"]!!)
+            findViewById<TextView>(R.id.quantity_satured_acid).text = getString(labels["acid"]!!)
+            findViewById<TextView>(R.id.quantity_sugar).text = getString(labels["sugar"]!!)
+            findViewById<TextView>(R.id.quantity_salt).text = getString(labels["salt"]!!)
 
 
 
             DrawableCompat.setTintList(
                 findViewById<View>(R.id.circle).background,
-                ColorStateList.valueOf(context.getColor(colorFat))
+                ColorStateList.valueOf(context.getColor(colors["fat"]!!))
             )
             DrawableCompat.setTintList(
                 findViewById<View>(R.id.circle_salt).background,
-                ColorStateList.valueOf(context.getColor(colorSalt))
+                ColorStateList.valueOf(context.getColor(colors["salt"]!!))
             )
             DrawableCompat.setTintList(
                 findViewById<View>(R.id.circle_satured_acid).background,
-                ColorStateList.valueOf(context.getColor(colorAcid))
+                ColorStateList.valueOf(context.getColor(colors["acid"]!!))
             )
             DrawableCompat.setTintList(
                 findViewById<View>(R.id.circle_sugar).background,
-                ColorStateList.valueOf(context.getColor(colorSugar))
+                ColorStateList.valueOf(context.getColor(colors["sugar"]!!))
             )
         }
 
