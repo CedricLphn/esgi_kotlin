@@ -9,10 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import fr.leprohon.labs.esgi_kotlin.databases.Product
 import fr.leprohon.labs.esgi_kotlin.databases.product_fake
 import fr.leprohon.labs.esgi_kotlin.presentation.productslist.ProductsAdapter
 
@@ -34,7 +38,7 @@ class ProductsListFragment : Fragment() {
 
         view.findViewById<RecyclerView>(R.id.main_list).run {
             layoutManager = LinearLayoutManager(this@ProductsListFragment.context)
-            adapter = ProductsAdapter(listOf(product_fake))
+            adapter = ProductsAdapter(products)
             addItemDecoration(
                 DividerItemDecoration(
                     this@ProductsListFragment.context,
@@ -58,8 +62,13 @@ class ProductsListFragment : Fragment() {
         when(it.resultCode) {
             Activity.RESULT_OK -> {
                 val res = it.data?.getStringExtra("SCAN_RESULT")
-
+                products.add(product_fake)
+                val product : Product = product_fake
+                product.barcode = res.toString()
                 Log.i("", res.toString())
+                val bundle = bundleOf("product" to product)
+                this.findNavController()
+                    .navigate(R.id.action_productsListFragment_to_productDetailsFragment, bundle)
             }
             Activity.RESULT_CANCELED -> {
                 Log.i("BarcodeScanner", "Activity: Barcode scan cancelled")

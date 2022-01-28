@@ -1,5 +1,6 @@
 package fr.leprohon.labs.esgi_kotlin.presentation.productslist
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -10,7 +11,7 @@ import fr.leprohon.labs.esgi_kotlin.R
 import fr.leprohon.labs.esgi_kotlin.databases.Product
 import fr.leprohon.labs.esgi_kotlin.databinding.ProductItemBinding
 
-class ProductsAdapter(private var products: List<Product>) :
+class ProductsAdapter(public var products: List<Product>) :
     RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
     class ViewHolder(val binding: ProductItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -44,6 +45,12 @@ class ProductsAdapter(private var products: List<Product>) :
                 product.nutritionFactsItem.energy.quantityfor100g.toString() + product.nutritionFactsItem.energy.units
 
         }
+    }
+
+    fun onUpdate(newProducts : List<Product>) {
+        products = newProducts
+        Log.i("products", products.toString())
+        notifyItemInserted(0)
     }
 
     override fun getItemCount(): Int = products.size
