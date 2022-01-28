@@ -21,7 +21,7 @@ import fr.leprohon.labs.esgi_kotlin.presentation.productslist.ProductsAdapter
 
 class ProductsListFragment : Fragment() {
 
-    private val products : MutableList<Product> = mutableListOf(product_fake)
+    private val products : MutableList<Product> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,30 +31,42 @@ class ProductsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        if(products.size == 0) {
+            return inflater.inflate(R.layout.activity_emptylist, container, false)
+
+        }
         return inflater.inflate(R.layout.fragment_products_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<RecyclerView>(R.id.main_list).run {
-            layoutManager = LinearLayoutManager(this@ProductsListFragment.context)
-            adapter = ProductsAdapter(products)
-            addItemDecoration(
-                DividerItemDecoration(
-                    this@ProductsListFragment.context,
-                    DividerItemDecoration.VERTICAL
+        if(products.size > 0) {
+            view.findViewById<RecyclerView>(R.id.main_list).run {
+                layoutManager = LinearLayoutManager(this@ProductsListFragment.context)
+                adapter = ProductsAdapter(products)
+                addItemDecoration(
+                    DividerItemDecoration(
+                        this@ProductsListFragment.context,
+                        DividerItemDecoration.VERTICAL
+                    )
                 )
-            )
+                view.findViewById<Button>(R.id.products_start_scan).setOnClickListener {
+                    launchScan()
+                }
+            }
+            }else {
+                view.findViewById<Button>(R.id.products_start_scan).setOnClickListener {
+                    launchScan()
+                }
+            }
+
         }
 
-        view.findViewById<Button>(R.id.products_start_scan).setOnClickListener {
-            val intent = Intent()
-            intent.action = "com.google.zxing.client.android.SCAN"
-            intent.putExtra("SCAN_FORMATS", "EAN_13")
-            getBarcode.launch(intent)
-        }
-
+    private fun launchScan() {
+        val intent = Intent()
+        intent.action = "com.google.zxing.client.android.SCAN"
+        intent.putExtra("SCAN_FORMATS", "EAN_13")
+        getBarcode.launch(intent)
     }
 
     private val getBarcode = registerForActivityResult(
