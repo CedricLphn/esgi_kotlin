@@ -22,6 +22,8 @@ import fr.leprohon.labs.esgi_kotlin.presentation.productslist.ProductsAdapter
 
 class ProductsListFragment : Fragment() {
 
+    private val products : MutableList<Product> = mutableListOf(product_fake)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
