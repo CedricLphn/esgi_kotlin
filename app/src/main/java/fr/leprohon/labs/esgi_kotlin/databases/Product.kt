@@ -5,7 +5,7 @@ import java.io.Serializable
 data class Product(
     val name: String,
     val brand: String,
-    val barcode: String,
+    var barcode: String,
     val quantity: String,
     val country: ArrayList<String>,
     val ingredients: String,
